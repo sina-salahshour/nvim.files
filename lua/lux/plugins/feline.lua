@@ -236,4 +236,5 @@ return {
 		})
 		-- require("feline").setup()
 	end,
+	enabled = false,
 }

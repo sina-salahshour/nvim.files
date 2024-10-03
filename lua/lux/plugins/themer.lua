@@ -17,5 +17,4 @@ return {
 		})
 		require("telescope").load_extension("themes")
 	end,
-	-- enabled = false,
 }

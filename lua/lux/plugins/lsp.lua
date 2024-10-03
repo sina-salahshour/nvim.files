@@ -103,7 +103,6 @@ return {
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		local cmp_confirm = { behavior = cmp.ConfirmBehavior.Replace, select = true }
 		cmp.setup({
-			Pmenu = { blend = vim.o.pumblend },
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
@@ -129,6 +128,7 @@ return {
 			}),
 			experimental = {
 				ghost_text = true,
+				native_menu = false,
 			},
 			window = { -- This seems to override blend option
 				completion = cmp.config.window.bordered(),

@@ -1,14 +1,7 @@
 return {
 	"tpope/vim-fugitive",
-	-- "vhyrro/luarocks.nvim",
 	"xiyaowong/transparent.nvim",
 	"nvim-tree/nvim-web-devicons",
-	"MunifTanjim/nui.nvim",
-	-- {
-	-- 	"nvim-lua/plenary.nvim",
-	-- 	name = "plenary",
-	-- },
-	-- { "gleam-lang/gleam.vim" },
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 	{ "m4xshen/autoclose.nvim", config = true },
 	{
