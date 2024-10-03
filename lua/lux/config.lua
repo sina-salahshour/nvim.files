@@ -7,6 +7,8 @@ vim.opt.termbidi = true
 -- neovide config
 
 vim.o.pumblend = 30
+vim.o.winblend = 30
+vim.o.pumheight = 10
 vim.g.neovide_transparency = 0.6
 vim.g.neovide_window_blurred = true
 vim.g.neovide_floating_blur_amount_x = 2.0
