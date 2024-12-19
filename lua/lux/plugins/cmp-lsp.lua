@@ -46,6 +46,7 @@ return {
 		)
 		require("mason").setup()
 		require("mason-lspconfig").setup({
+			automatic_installation = true,
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
@@ -60,14 +61,6 @@ return {
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
-
-				["eslint"] = function()
-					local lspconfig = require("lspconfig")
-
-					lspconfig.eslint.setup({
 						capabilities = capabilities,
 					})
 				end,
@@ -118,7 +111,7 @@ return {
 				["<c-d>"] = cmp.mapping.scroll_docs(-4),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lua" },
+				{ name = "nvim_lua", priority = 1000 },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "cmp-tw2css" },
@@ -334,4 +327,5 @@ return {
 			end,
 		})
 	end,
+	enabled = vim.g.no_lsp,
 }

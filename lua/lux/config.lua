@@ -1,3 +1,7 @@
+vim.loader.enable()
+
+vim.g.no_lsp = os.getenv("NO_LSP") ~= "true"
+
 vim.opt.exrc = true
 
 -- bidi support in cosmic term
@@ -31,7 +35,7 @@ vim.opt.number = true
 
 vim.opt.mouse = ""
 
-vim.o.textwidth = 80
+-- vim.o.textwidth = 80
 vim.o.ruler = true
 vim.o.colorcolumn = "81"
 
@@ -99,3 +103,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+function Tabsize(num)
+	vim.cmd("set tabstop=" .. num)
+	vim.cmd("set softtabstop=" .. num)
+	vim.cmd("set shiftwidth=" .. num)
+end

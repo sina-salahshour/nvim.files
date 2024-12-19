@@ -6,18 +6,18 @@ return {
 			return
 		end
 
-		local one_monokai = {
-			fg = "#abb2bf",
-			bg = "#1e2024",
-			green = "#98c379",
-			yellow = "#e5c07b",
-			purple = "#c678dd",
-			orange = "#d19a66",
-			peanut = "#f6d5a4",
-			red = "#e06c75",
-			aqua = "#61afef",
-			darkblue = "#282c34",
-			dark_red = "#f75f5f",
+		local rose_pine = {
+			fg = "#e0def4",
+			bg = "#191724",
+			green = "#9ccfd8",
+			yellow = "#f6c177",
+			purple = "#c4a7e7",
+			orange = "#ea9a97",
+			peanut = "#ebbcba",
+			red = "#eb6f92",
+			aqua = "#31748f",
+			darkblue = "#26233a",
+			dark_red = "#eb6f92",
 		}
 
 		local vi_mode_colors = {
@@ -37,7 +37,6 @@ return {
 					name = "vi_mode",
 					opts = {
 						show_mode_name = true,
-						-- padding = "center", -- Uncomment for extra padding.
 					},
 				},
 				hl = function()
@@ -231,10 +230,8 @@ return {
 
 		feline.setup({
 			components = components,
-			theme = one_monokai,
+			theme = rose_pine,
 			vi_mode_colors = vi_mode_colors,
 		})
-		-- require("feline").setup()
 	end,
-	enabled = false,
 }
