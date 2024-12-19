@@ -109,3 +109,10 @@ function Tabsize(num)
 	vim.cmd("set softtabstop=" .. num)
 	vim.cmd("set shiftwidth=" .. num)
 end
+
+function Realtab()
+	vim.cmd("set softtabstop=0 noexpandtab")
+end
+function Spacetab()
+	vim.cmd("set expandtab")
+end
