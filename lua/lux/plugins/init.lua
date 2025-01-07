@@ -1,7 +1,19 @@
 return {
 	"tpope/vim-fugitive",
 	"xiyaowong/transparent.nvim",
-	"nvim-tree/nvim-web-devicons",
+	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {
+			override_by_extension = {
+				["mh"] = {
+					icon = "",
+					color = "#6f8ea9",
+					name = "Mah",
+				},
+			},
+		},
+		config = true,
+	},
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 	{ "m4xshen/autoclose.nvim", config = true },
 	{

@@ -31,16 +31,31 @@ return {
 			modules = {},
 		})
 
-		local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-		treesitter_parser_config.templ = {
+		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+		parser_config.mah = {
 			install_info = {
-				url = "https://github.com/vrischmann/tree-sitter-templ.git",
-				files = { "src/parser.c", "src/scanner.c" },
-				branch = "master",
+				url = "/home/drhe/Documents/code/uni/compiler/mah/syntax-highlight",
+				generate_requires_npm = false,
+				requires_generate_from_grammar = false,
+				files = { "src/parser.c" },
 			},
+			filetype = "mah",
 		}
 
-		vim.treesitter.language.register("templ", "templ")
+		vim.filetype.add({
+			extension = {
+				mh = "mah",
+			},
+		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "mah",
+			callback = function()
+				vim.bo.commentstring = "# %s"
+			end,
+		})
+		vim.treesitter.language.register("mah", { "mh" })
+
 		vim.treesitter.language.register("prolog", "pl")
 	end,
 }

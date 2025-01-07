@@ -10,8 +10,8 @@ vim.opt.termbidi = true
 
 -- neovide config
 
-vim.o.pumblend = 30
-vim.o.winblend = 30
+vim.o.pumblend = 20
+vim.o.winblend = 20
 vim.o.pumheight = 10
 vim.g.neovide_transparency = 0.6
 vim.g.neovide_window_blurred = true
@@ -22,9 +22,14 @@ vim.g.neovide_cursor_trail_size = 0.1
 
 -- neovide config end
 vim.g.filetype_pl = "prolog"
+
+-- fold config
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- prolog file type
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 vim.g.have_nerd_font = true
 vim.opt.termguicolors = true
@@ -90,6 +95,7 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save current buffer" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit nvim" })
+vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Quit nvim" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })

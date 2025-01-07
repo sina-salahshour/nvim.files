@@ -118,6 +118,7 @@ return {
 				{ name = "dotenv" },
 				{ name = "path" },
 				{ name = "buffer" },
+				{ name = "neorg" },
 			}),
 			experimental = {
 				ghost_text = true,
